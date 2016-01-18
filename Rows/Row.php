@@ -20,6 +20,13 @@ class Row
      */
     protected $parameters;
 
+
+    /**
+     * Row constructor.
+     * @param mixed $data
+     */
+    public function __construct($data){}
+
     /**
      * @return string
      */
