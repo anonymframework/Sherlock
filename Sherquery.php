@@ -14,6 +14,7 @@ class Sherquery
      * @var array
      */
     protected $rows;
+
     /**
      * @var Shercon
      */
