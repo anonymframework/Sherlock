@@ -11,4 +11,3 @@ $sherlock = new Shercon([
     'password' => 'secret'
 ]);
 
-print_r($sherlock->open());
