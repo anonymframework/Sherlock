@@ -68,7 +68,7 @@ class Shercon
         $dbname = $options['dbname'] ?? '';
         $username = $options['username'] ?? '';
         $password = $options['password'] ?? '';
-        $charset = $options['charset'] ?? '';
+        $charset = $options['charset'] ?? 'utf8';
 
 
         return new PDO('mysql:host=' . $host . ';dbname=' . $dbname . ';charset=' . $charset, $username, $password);
@@ -84,7 +84,11 @@ class Shercon
 
         if (isset($this->connectors[$driver])) {
 
-            return $this->connectors[$driver]($this->options);
+            if (is_string($this->connectors[$driver])) {
+                return call_user_func([$this, $driver], $this->options);
+            } else {
+                $this->$driver($this->options);
+            }
 
         } else {
             throw new DriverNotFoundExpection(sprintf('%s driver could not found in your drivers ', $driver));
