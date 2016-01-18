@@ -3,6 +3,7 @@
 
 namespace Sherlock;
 
+use Sherlock\Rows\Limit;
 use Sherlock\Rows\OrderBy;
 use Sherlock\Rows\Select;
 
@@ -46,14 +47,19 @@ class Sherquery
      * @param string $type
      * @return Sherquery
      */
-    public function orderBy($column,string $type = 'DESC') : Sherquery
+    public function orderBy($column, string $type = 'DESC') : Sherquery
     {
         $this->addOrder(OrderBy::create($column, $type));
         return $this;
     }
 
-    public function limit($limit) : Sherquery {
-        $this->addLimit();
+    /**
+     * @param array|string $limit
+     * @return Sherquery
+     */
+    public function limit($limit) : Sherquery
+    {
+        $this->addLimit(Limit::create($limit));
 
         return $this;
     }
