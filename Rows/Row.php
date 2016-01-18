@@ -23,7 +23,7 @@ class Row
     /**
      * @return string
      */
-    public function getString()
+    public function getString() : string
     {
         return $this->string;
     }
@@ -54,5 +54,13 @@ class Row
     {
         $this->parameters = $parameters;
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->string;
     }
 }
