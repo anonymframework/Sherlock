@@ -6,7 +6,7 @@ namespace Sherlock\Rows;
  * Class Select
  * @package Sherlock\Rows
  */
-class Select
+class Select extends Row
 {
 
 }
