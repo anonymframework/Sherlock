@@ -3,6 +3,7 @@
 
 namespace Sherlock;
 
+use Sherlock\Rows\OrderBy;
 use Sherlock\Rows\Select;
 
 /**
@@ -40,11 +41,15 @@ class Sherquery
         return $this;
     }
 
-    public function orderBy($column, $type = 'DESC')
+    /**
+     * @param string|array $column
+     * @param string $type
+     * @return Sherquery
+     */
+    public function orderBy($column, $type = 'DESC') : Sherquery
     {
-        $row = 'ORDER BY ' . $column . ' ' . $type;
-
-
+        $this->addOrder(OrderBy::create($column, $type));
+        return $this;
     }
 
 }
