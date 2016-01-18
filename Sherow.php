@@ -3,6 +3,7 @@
 
 namespace Sherlock;
 
+use Sherlock\Rows\OrderBy;
 use Sherlock\Rows\Select;
 
 /**
@@ -38,9 +39,18 @@ trait Sherow
     /**
      * @param Select $select
      */
-    public function addSelect(Select $select){
+    public function addSelect(Select $select)
+    {
         $this->rows['select'][] = $select;
     }
 
+
+    /**
+     * @param OrderBy $orderBy
+     */
+    public function addOrder(OrderBy $orderBy)
+    {
+        $this->rows['order'] = $orderBy;
+    }
 
 }
