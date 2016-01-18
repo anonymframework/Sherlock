@@ -46,7 +46,7 @@ class Sherquery
      * @param string $type
      * @return Sherquery
      */
-    public function orderBy($column, $type = 'DESC') : Sherquery
+    public function orderBy($column,string $type = 'DESC') : Sherquery
     {
         $this->addOrder(OrderBy::create($column, $type));
         return $this;
