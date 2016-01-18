@@ -1,0 +1,21 @@
+{
+  "name": "anonymframework/element-orm",
+  "description": "the new php orm",
+  "type": "library",
+  "license": "mit",
+  "authors": [
+    {
+      "name": "vahit",
+      "email": "vahit.serif119@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "Sherlock\\": "."
+    }
+  }
+}
