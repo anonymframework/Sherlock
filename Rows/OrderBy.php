@@ -12,8 +12,8 @@ class OrderBy extends Row
 
     /**
      * OrderBy constructor.
-     * @param $column
-     * @param $type
+     * @param string $column
+     * @param string $type
      */
     public function __construct($column, $type)
     {
