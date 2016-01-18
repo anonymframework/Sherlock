@@ -20,5 +20,39 @@ class Row
      */
     protected $parameters;
 
+    /**
+     * @return string
+     */
+    public function getString()
+    {
+        return $this->string;
+    }
 
+    /**
+     * @param string $string
+     * @return Row
+     */
+    public function setString(string $string)
+    {
+        $this->string = $string;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getParameters()
+    {
+        return $this->parameters;
+    }
+
+    /**
+     * @param array $parameters
+     * @return Row
+     */
+    public function setParameters(array $parameters)
+    {
+        $this->parameters = $parameters;
+        return $this;
+    }
 }
