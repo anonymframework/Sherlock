@@ -21,3 +21,4 @@ class GroupBy extends Row
         $this->string = $row;
     }
 }
+
