@@ -52,4 +52,9 @@ class Sherquery
         return $this;
     }
 
+    public function limit($limit) : Sherquery {
+        $this->addLimit();
+
+        return $this;
+    }
 }
