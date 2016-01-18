@@ -3,6 +3,7 @@
 
 namespace Sherlock;
 
+use Sherlock\Rows\Limit;
 use Sherlock\Rows\OrderBy;
 use Sherlock\Rows\Select;
 
@@ -51,6 +52,14 @@ trait Sherow
     public function addOrder(OrderBy $orderBy)
     {
         $this->rows['order'] = $orderBy;
+    }
+
+    /**
+     * @param Limit $limit
+     */
+    public function addLimit(Limit $limit)
+    {
+        $this->rows['limit'] = $limit;
     }
 
 }
