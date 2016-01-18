@@ -63,4 +63,13 @@ class Row
     {
         return $this->string;
     }
+
+    /**
+     * @param array ...$data
+     * @return static
+     */
+    public static function create(...$data)
+    {
+        return new static(...$data);
+    }
 }
