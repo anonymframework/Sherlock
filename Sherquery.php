@@ -3,6 +3,8 @@
 
 namespace Sherlock;
 
+use Sherlock\Rows\Select;
+
 /**
  * Class Sherquery
  * @package Sherlock
@@ -10,10 +12,7 @@ namespace Sherlock;
 class Sherquery
 {
 
-    /**
-     * @var array
-     */
-    protected $rows;
+    use Sherow;
 
     /**
      * @var Shercon
@@ -27,6 +26,25 @@ class Sherquery
     public function __construct(Shercon $shercon)
     {
         $this->shercon = $shercon;
+    }
+
+    /**
+     * add a new select row
+     *
+     * @param mixed $select
+     * @return Sherquery
+     */
+    public function select($select) : Sherquery
+    {
+        $this->addSelect(Select::create($select));
+        return $this;
+    }
+
+    public function orderBy($column, $type = 'DESC')
+    {
+        $row = 'ORDER BY ' . $column . ' ' . $type;
+
+
     }
 
 }
